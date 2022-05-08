@@ -11,7 +11,18 @@
 		0FC63B0A2828834800C16BD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B092828834800C16BD8 /* ViewController.swift */; };
 		0FC63B0F2828834900C16BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FC63B0E2828834900C16BD8 /* Assets.xcassets */; };
 		0FC63B122828834900C16BD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC63B102828834900C16BD8 /* LaunchScreen.storyboard */; };
+		0FC63B20282886D300C16BD8 /* GBM_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B1F282886D300C16BD8 /* GBM_ChallengeTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FC63B21282886D300C16BD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FC63AFA2828834800C16BD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FC63B012828834800C16BD8;
+			remoteInfo = "GBM-Challenge";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0FC63B022828834800C16BD8 /* GBM-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GBM-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,10 +31,19 @@
 		0FC63B0E2828834900C16BD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FC63B112828834900C16BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FC63B132828834900C16BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FC63B1D282886D200C16BD8 /* GBM-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GBM-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FC63B1F282886D300C16BD8 /* GBM_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBM_ChallengeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0FC63AFF2828834800C16BD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FC63B1A282886D200C16BD8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				0FC63B042828834800C16BD8 /* GBM-Challenge */,
+				0FC63B1E282886D300C16BD8 /* GBM-ChallengeTests */,
 				0FC63B032828834800C16BD8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				0FC63B022828834800C16BD8 /* GBM-Challenge.app */,
+				0FC63B1D282886D200C16BD8 /* GBM-ChallengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +81,14 @@
 				0FC63B132828834900C16BD8 /* Info.plist */,
 			);
 			path = "GBM-Challenge";
+			sourceTree = "<group>";
+		};
+		0FC63B1E282886D300C16BD8 /* GBM-ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0FC63B1F282886D300C16BD8 /* GBM_ChallengeTests.swift */,
+			);
+			path = "GBM-ChallengeTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +111,24 @@
 			productReference = 0FC63B022828834800C16BD8 /* GBM-Challenge.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0FC63B1C282886D200C16BD8 /* GBM-ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FC63B23282886D300C16BD8 /* Build configuration list for PBXNativeTarget "GBM-ChallengeTests" */;
+			buildPhases = (
+				0FC63B19282886D200C16BD8 /* Sources */,
+				0FC63B1A282886D200C16BD8 /* Frameworks */,
+				0FC63B1B282886D200C16BD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FC63B22282886D300C16BD8 /* PBXTargetDependency */,
+			);
+			name = "GBM-ChallengeTests";
+			productName = "GBM-ChallengeTests";
+			productReference = 0FC63B1D282886D200C16BD8 /* GBM-ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +141,10 @@
 				TargetAttributes = {
 					0FC63B012828834800C16BD8 = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					0FC63B1C282886D200C16BD8 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 0FC63B012828834800C16BD8;
 					};
 				};
 			};
@@ -110,6 +162,7 @@
 			projectRoot = "";
 			targets = (
 				0FC63B012828834800C16BD8 /* GBM-Challenge */,
+				0FC63B1C282886D200C16BD8 /* GBM-ChallengeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -121,6 +174,13 @@
 			files = (
 				0FC63B122828834900C16BD8 /* LaunchScreen.storyboard in Resources */,
 				0FC63B0F2828834900C16BD8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FC63B1B282886D200C16BD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +196,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0FC63B19282886D200C16BD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC63B20282886D300C16BD8 /* GBM_ChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FC63B22282886D300C16BD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FC63B012828834800C16BD8 /* GBM-Challenge */;
+			targetProxy = 0FC63B21282886D300C16BD8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0FC63B102828834900C16BD8 /* LaunchScreen.storyboard */ = {
@@ -318,6 +394,42 @@
 			};
 			name = Release;
 		};
+		0FC63B24282886D300C16BD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4N5PCLAFV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jgc92.GBM-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GBM-Challenge.app/GBM-Challenge";
+			};
+			name = Debug;
+		};
+		0FC63B25282886D300C16BD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4N5PCLAFV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jgc92.GBM-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GBM-Challenge.app/GBM-Challenge";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -335,6 +447,15 @@
 			buildConfigurations = (
 				0FC63B172828834900C16BD8 /* Debug */,
 				0FC63B182828834900C16BD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FC63B23282886D300C16BD8 /* Build configuration list for PBXNativeTarget "GBM-ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FC63B24282886D300C16BD8 /* Debug */,
+				0FC63B25282886D300C16BD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
