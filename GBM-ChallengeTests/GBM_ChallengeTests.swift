@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import GBM_Challenge
 
 class GBM_ChallengeTests: XCTestCase {
 
