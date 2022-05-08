@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FC63B062828834800C16BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B052828834800C16BD8 /* AppDelegate.swift */; };
-		0FC63B082828834800C16BD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B072828834800C16BD8 /* SceneDelegate.swift */; };
 		0FC63B0A2828834800C16BD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B092828834800C16BD8 /* ViewController.swift */; };
-		0FC63B0D2828834800C16BD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC63B0B2828834800C16BD8 /* Main.storyboard */; };
 		0FC63B0F2828834900C16BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FC63B0E2828834900C16BD8 /* Assets.xcassets */; };
 		0FC63B122828834900C16BD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC63B102828834900C16BD8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		0FC63B022828834800C16BD8 /* GBM-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GBM-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC63B052828834800C16BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0FC63B072828834800C16BD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0FC63B092828834800C16BD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0FC63B0C2828834800C16BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FC63B0E2828834900C16BD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FC63B112828834900C16BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FC63B132828834900C16BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				0FC63B052828834800C16BD8 /* AppDelegate.swift */,
-				0FC63B072828834800C16BD8 /* SceneDelegate.swift */,
 				0FC63B092828834800C16BD8 /* ViewController.swift */,
-				0FC63B0B2828834800C16BD8 /* Main.storyboard */,
 				0FC63B0E2828834900C16BD8 /* Assets.xcassets */,
 				0FC63B102828834900C16BD8 /* LaunchScreen.storyboard */,
 				0FC63B132828834900C16BD8 /* Info.plist */,
@@ -127,7 +121,6 @@
 			files = (
 				0FC63B122828834900C16BD8 /* LaunchScreen.storyboard in Resources */,
 				0FC63B0F2828834900C16BD8 /* Assets.xcassets in Resources */,
-				0FC63B0D2828834800C16BD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +133,12 @@
 			files = (
 				0FC63B0A2828834800C16BD8 /* ViewController.swift in Sources */,
 				0FC63B062828834800C16BD8 /* AppDelegate.swift in Sources */,
-				0FC63B082828834800C16BD8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0FC63B0B2828834800C16BD8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0FC63B0C2828834800C16BD8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0FC63B102828834900C16BD8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +276,6 @@
 				INFOPLIST_FILE = "GBM-Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +303,6 @@
 				INFOPLIST_FILE = "GBM-Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
