@@ -14,6 +14,7 @@
 		0FC63B28282887C400C16BD8 /* IPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B27282887C400C16BD8 /* IPC.swift */; };
 		0FC63B2B2828889700C16BD8 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B2A2828889700C16BD8 /* ViewModels.swift */; };
 		0FC63B2E282888CE00C16BD8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B2D282888CE00C16BD8 /* TabBarViewController.swift */; };
+		0FC63B3028288D4300C16BD8 /* ViewModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B2F28288D4300C16BD8 /* ViewModelHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		0FC63B27282887C400C16BD8 /* IPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPC.swift; sourceTree = "<group>"; };
 		0FC63B2A2828889700C16BD8 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
 		0FC63B2D282888CE00C16BD8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		0FC63B2F28288D4300C16BD8 /* ViewModelHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				0FC63B292828888100C16BD8 /* Views */,
 				0FC63B2C282888A200C16BD8 /* ViewModels */,
 				0FC63B052828834800C16BD8 /* AppDelegate.swift */,
+				0FC63B2F28288D4300C16BD8 /* ViewModelHelper.swift */,
 				0FC63B092828834800C16BD8 /* ViewController.swift */,
 				0FC63B0E2828834900C16BD8 /* Assets.xcassets */,
 				0FC63B102828834900C16BD8 /* LaunchScreen.storyboard */,
@@ -215,6 +218,7 @@
 			files = (
 				0FC63B0A2828834800C16BD8 /* ViewController.swift in Sources */,
 				0FC63B28282887C400C16BD8 /* IPC.swift in Sources */,
+				0FC63B3028288D4300C16BD8 /* ViewModelHelper.swift in Sources */,
 				0FC63B2B2828889700C16BD8 /* ViewModels.swift in Sources */,
 				0FC63B2E282888CE00C16BD8 /* TabBarViewController.swift in Sources */,
 				0FC63B062828834800C16BD8 /* AppDelegate.swift in Sources */,
