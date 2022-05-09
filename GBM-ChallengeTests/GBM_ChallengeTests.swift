@@ -6,30 +6,39 @@
 //
 
 import XCTest
+@testable import GBM_Challenge
 
 class GBM_ChallengeTests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    // Test IPC array
+    private func createIPCArray() -> [IPC] {
+        let testIPCArray = [
+            IPC(date: "2020-08-18T04:11:52.06-05:00", price: 65, percentageChange: 42, volume: 54, change: 324),
+            IPC(date: "2020-08-18T04:11:52.06-05:00", price: 56, percentageChange: 789, volume: 52, change: 87),
+            IPC(date: "2020-08-18T04:11:52.06-05:00", price: 645, percentageChange: 7, volume: 852, change: 78),
+            IPC(date: "2020-08-18T04:11:52.06-05:00", price: 6512, percentageChange: 755, volume: 74, change: 45),
+            IPC(date: "2020-08-18T04:11:52.06-05:00", price: 91, percentageChange: 25, volume: 45, change: 11),
+        ]
+        
+        return testIPCArray
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    // Test TabBarViewControllerViewModel for no empty data
+    func testTabBarViewControllerViewModel() {
+        let tabBarViewControllerViewModel = TabBarViewControllerViewModel()
+        let testIPCArray = createIPCArray()
+        
+        tabBarViewControllerViewModel.updateViewModel(testIPCArray)
+        
+        XCTAssertFalse(tabBarViewControllerViewModel.priceData == [])
+        XCTAssertFalse(tabBarViewControllerViewModel.percentageChangeData == [])
+        XCTAssertFalse(tabBarViewControllerViewModel.volumeData == [])
+        XCTAssertFalse(tabBarViewControllerViewModel.changeData == [])
     }
-
 }
