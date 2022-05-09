@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 // Main TabBar view to showcase charts.
 class TabBarViewController: UITabBarController {
     lazy var viewModel = TabBarViewControllerViewModel()
     var listViewControllerNavigation: UINavigationController?
+    
+    weak var loginViewController: LoginViewController?
+    weak var loginFallbackViewController: LoginFallbackViewController?
+    weak var localAuthenticationContext: LAContext?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +86,24 @@ class TabBarViewController: UITabBarController {
 
 extension TabBarViewController: ChartViewControllerDelegate {
     func chartDidLogout() {
-        // TODO
+        let alert = UIAlertController(title: "Are you sure to logout?", message: nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { [weak self] _ in
+            guard let localAuthenticationContext = self?.localAuthenticationContext else { return }
+            switch localAuthenticationContext.biometricType {
+            case .faceID:
+                self?.view.window?.rootViewController = self?.loginViewController
+            case .touchID:
+                self?.view.window?.rootViewController = self?.loginViewController
+            case .none:
+                self?.view.window?.rootViewController = self?.loginFallbackViewController
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { _ in
+            alert.dismiss(animated: false)
+        }))
+        present(alert, animated: true)
     }
     
     func goToList() {

@@ -35,7 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Inject LAContext
         loginViewController.localAuthenticationContext = localAuthenticationContext
+        tabBarViewController.localAuthenticationContext = localAuthenticationContext
         
+        // Inject navigation views to tab bar view
+        tabBarViewController.loginViewController = loginViewController
+        tabBarViewController.loginFallbackViewController = loginFallbackViewController
         tabBarViewController.listViewControllerNavigation = listViewControllerNavigation
         
         window?.rootViewController = tabBarViewController
