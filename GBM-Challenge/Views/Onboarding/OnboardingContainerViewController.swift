@@ -48,8 +48,6 @@ class OnboardingContainerViewController: UIViewController {
         super.viewDidLoad()
                 
         setup()
-        style()
-        layout()
     }
     
     private func setup() {
@@ -62,6 +60,7 @@ class OnboardingContainerViewController: UIViewController {
         pageViewController.dataSource = self
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
+        // View
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
             view.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor),
@@ -71,18 +70,14 @@ class OnboardingContainerViewController: UIViewController {
         
         pageViewController.setViewControllers([pages.first!], direction: .forward, animated: false, completion: nil)
         currentVC = pages.first!
-    }
-    
-    private func style() {
+        
+        // Close button view
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.setTitle("Close", for: [])
         closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
         
         view.addSubview(closeButton)
-    }
-    
-    private func layout() {
-        // Close Button
+        
         NSLayoutConstraint.activate([
             closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
             closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
@@ -90,7 +85,6 @@ class OnboardingContainerViewController: UIViewController {
     }
 }
 
-// MARK: - UIPageViewControllerDataSource
 extension OnboardingContainerViewController: UIPageViewControllerDataSource {
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -122,7 +116,6 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     }
 }
 
-// MARK: - Actions
 extension OnboardingContainerViewController {
     @objc func closeTapped(_ sender: UIButton) {
         delegate?.didFinishOnboarding()

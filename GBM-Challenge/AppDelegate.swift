@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Inject LAContext
         loginViewController.localAuthenticationContext = localAuthenticationContext
         
-        window?.rootViewController = loginViewController
+        window?.rootViewController = onboardingContainerViewController
         
         return true
     }
