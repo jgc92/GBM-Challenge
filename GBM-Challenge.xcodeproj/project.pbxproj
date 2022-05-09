@@ -10,6 +10,8 @@
 		0F675C2E282893DF009A0C86 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C2D282893DF009A0C86 /* ChartViewController.swift */; };
 		0F675C3228289640009A0C86 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C3128289640009A0C86 /* LoginViewController.swift */; };
 		0F675C3428289A88009A0C86 /* LAContext+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C3328289A88009A0C86 /* LAContext+.swift */; };
+		0F675C3628289B48009A0C86 /* LoginFallbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C3528289B48009A0C86 /* LoginFallbackViewController.swift */; };
+		0F675C3828289CD9009A0C86 /* LoginFallbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C3728289CD9009A0C86 /* LoginFallbackView.swift */; };
 		0FC63B062828834800C16BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B052828834800C16BD8 /* AppDelegate.swift */; };
 		0FC63B0A2828834800C16BD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B092828834800C16BD8 /* ViewController.swift */; };
 		0FC63B0F2828834900C16BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FC63B0E2828834900C16BD8 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 		0F675C2D282893DF009A0C86 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		0F675C3128289640009A0C86 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0F675C3328289A88009A0C86 /* LAContext+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LAContext+.swift"; sourceTree = "<group>"; };
+		0F675C3528289B48009A0C86 /* LoginFallbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFallbackViewController.swift; sourceTree = "<group>"; };
+		0F675C3728289CD9009A0C86 /* LoginFallbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFallbackView.swift; sourceTree = "<group>"; };
 		0FC63B022828834800C16BD8 /* GBM-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GBM-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC63B052828834800C16BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC63B092828834800C16BD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				0F675C3128289640009A0C86 /* LoginViewController.swift */,
+				0F675C3528289B48009A0C86 /* LoginFallbackViewController.swift */,
+				0F675C3728289CD9009A0C86 /* LoginFallbackView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -382,6 +388,8 @@
 				0F675C2E282893DF009A0C86 /* ChartViewController.swift in Sources */,
 				0FC63B2E282888CE00C16BD8 /* TabBarViewController.swift in Sources */,
 				0FC63B062828834800C16BD8 /* AppDelegate.swift in Sources */,
+				0F675C3828289CD9009A0C86 /* LoginFallbackView.swift in Sources */,
+				0F675C3628289B48009A0C86 /* LoginFallbackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
