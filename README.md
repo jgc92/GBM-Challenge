@@ -4,6 +4,8 @@ GBM iOS Application Challenge
 # Notes to GBM reviewers
 Hi! I'm Joaquín González and this is my solution to the challenge. Thank you for reviewing my solution and for your time. Some assumptions I took:
 
+## Remember to run "GBM-Challenge.xcworkspace" for this to work pls (I'm using Charts).
+
 ## About the login
 * If the device is not enrolled with local auth then the fallback login view will be set.
 * Whenever the device is enrolled with local auth the login will be set to login with local auth.
