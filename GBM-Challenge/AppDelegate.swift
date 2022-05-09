@@ -42,7 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarViewController.loginFallbackViewController = loginFallbackViewController
         tabBarViewController.listViewControllerNavigation = listViewControllerNavigation
         
-        window?.rootViewController = tabBarViewController
+        // Set login by biometric availability
+        switch localAuthenticationContext.biometricType {
+        case .faceID:
+            window?.rootViewController = loginViewController
+        case .touchID:
+            window?.rootViewController = loginViewController
+        case .none:
+            window?.rootViewController = loginFallbackViewController
+        }
         
         return true
     }
