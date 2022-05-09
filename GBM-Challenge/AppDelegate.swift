@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let loginViewController = LoginViewController()
     let loginFallbackViewController = LoginFallbackViewController()
+    let onboardingContainerViewController = OnboardingContainerViewController()
     let tabBarViewController = TabBarViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -25,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set delegates
         loginViewController.delegate = self
         loginFallbackViewController.delegate = self
+        onboardingContainerViewController.delegate = self
         
         // Inject LAContext
         loginViewController.localAuthenticationContext = localAuthenticationContext
@@ -37,8 +39,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: LoginViewControllerDelegate {
     func didLoginWithLA() {
-        setRootViewController(tabBarViewController)
-    }
+        if LocalState.hasOnboarded {
+            setRootViewController(tabBarViewController)
+        } else {
+            setRootViewController(onboardingContainerViewController)
+        }    }
     
     func didFallback() {
         loginFallbackViewController.isBackButtonVisible = true
@@ -52,6 +57,17 @@ extension AppDelegate: LoginFallbackViewControllerDelegate {
     }
     
     func didLogin() {
+        if LocalState.hasOnboarded {
+            setRootViewController(tabBarViewController)
+        } else {
+            setRootViewController(onboardingContainerViewController)
+        }
+    }
+}
+
+extension AppDelegate: OnboardingContainerViewControllerDelegate {
+    func didFinishOnboarding() {
+        LocalState.hasOnboarded = true
         setRootViewController(tabBarViewController)
     }
 }
