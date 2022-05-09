@@ -10,6 +10,22 @@ import Foundation
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    lazy var logoImageView: UIImageView = {
+        let logoImageView = UIImageView()
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.contentMode = .scaleToFill
+        
+        let image = UIImage(named: "GBM-logo")
+        let targetSize = CGSize(width: 300, height: 150)
+        let scaledImage = image?.scalePreservingAspectRatio(
+            targetSize: targetSize
+        )
+        logoImageView.image = scaledImage
+                
+        return logoImageView
+    }()
+    
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
 
@@ -48,7 +64,13 @@ class LoginViewController: UIViewController {
         stackView.addArrangedSubview(signInLabel)
         stackView.addArrangedSubview(authButton)
         
+        view.addSubview(logoImageView)
         view.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImageView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -50)
+        ])
 
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 50),
