@@ -9,17 +9,29 @@ import UIKit
 
 // Main TabBar view to showcase charts.
 class TabBarViewController: UITabBarController {
+    lazy var viewModel = TabBarViewControllerViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        viewModel.loadData()
+        viewModel.refreshData = { () in
+            DispatchQueue.main.async { [weak self] in
+                self?.setup()
+            }
+        }
     }
     
     private func setup() {
         // Create all chart views.
-        let priceChartViewController = UIViewController()
-        let percentageChangeChartViewController = UIViewController()
-        let volumeChartViewController = UIViewController()
-        let changeChartViewController = UIViewController()
+        let priceChartViewController = ChartViewController()
+        let percentageChangeChartViewController = ChartViewController()
+        let volumeChartViewController = ChartViewController()
+        let changeChartViewController = ChartViewController()
+        
+        priceChartViewController.data = viewModel.priceData
+        percentageChangeChartViewController.data = viewModel.percentageChangeData
+        volumeChartViewController.data = viewModel.volumeData
+        changeChartViewController.data = viewModel.changeData
         
         // Set navigation title.
         priceChartViewController.title = "Price vs Time"
