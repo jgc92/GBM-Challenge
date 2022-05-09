@@ -41,4 +41,24 @@ class GBM_ChallengeTests: XCTestCase {
         XCTAssertFalse(tabBarViewControllerViewModel.volumeData == [])
         XCTAssertFalse(tabBarViewControllerViewModel.changeData == [])
     }
+    
+    // Test ListViewControllerViewModel for no empty data
+    func testListViewControllerViewModel() {
+        let listViewControllerViewModel = ListViewControllerViewModel()
+        let testIPCArray = createIPCArray()
+
+        listViewControllerViewModel.updateViewModel(testIPCArray)
+
+        XCTAssertFalse(listViewControllerViewModel.ipcArray.isEmpty)
+    }
+    
+    // Test ViewModelHelper date formatter
+    func testViewModelHelperGetFormattedDate() {
+        let viewModelHelper = ViewModelHelper()
+        let isoDateString = "2020-08-18T00:02:43.91-05:00"
+        let formattedDateString = viewModelHelper.getFormattedDate(isoDate: isoDateString)
+        let expectedDateString = "Date: August-18-2020   Time: 0:2:43"
+        
+        XCTAssertEqual(expectedDateString, formattedDateString)
+    }
 }
