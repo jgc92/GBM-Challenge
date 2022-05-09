@@ -10,6 +10,7 @@ import UIKit
 // Main TabBar view to showcase charts.
 class TabBarViewController: UITabBarController {
     lazy var viewModel = TabBarViewControllerViewModel()
+    var listViewControllerNavigation: UINavigationController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +29,17 @@ class TabBarViewController: UITabBarController {
         let volumeChartViewController = ChartViewController()
         let changeChartViewController = ChartViewController()
         
+        // Set view models
         priceChartViewController.data = viewModel.priceData
         percentageChangeChartViewController.data = viewModel.percentageChangeData
         volumeChartViewController.data = viewModel.volumeData
         changeChartViewController.data = viewModel.changeData
+        
+        // Set delegation
+        priceChartViewController.delegate = self
+        percentageChangeChartViewController.delegate = self
+        volumeChartViewController.delegate = self
+        changeChartViewController.delegate = self
         
         // Set navigation title.
         priceChartViewController.title = "Price vs Time"
@@ -68,5 +76,15 @@ class TabBarViewController: UITabBarController {
         for i in 0..<items.count {
             items[i].image = UIImage(systemName: icons[i])
         }
+    }
+}
+
+extension TabBarViewController: ChartViewControllerDelegate {
+    func chartDidLogout() {
+        // TODO
+    }
+    
+    func goToList() {
+        view.window?.rootViewController = self.listViewControllerNavigation
     }
 }

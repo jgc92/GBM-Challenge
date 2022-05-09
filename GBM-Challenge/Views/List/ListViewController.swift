@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol ListViewControllerDelegate: AnyObject {
+    func ListViewControllerBackButtonDidTapped()
+}
+
 class ListViewController: UIViewController {
     let viewModel = ListViewControllerViewModel()
+    
+    weak var delegate: ListViewControllerDelegate?
             
     let tableView = UITableView()
     let loadingIndicator = UIActivityIndicatorView(style: .large)
@@ -54,8 +60,16 @@ class ListViewController: UIViewController {
         ])
         
         loadingIndicator.center = view.center
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))
     }
 
+}
+
+extension ListViewController {
+    @objc func backButtonTapped() {
+        delegate?.ListViewControllerBackButtonDidTapped()
+    }
 }
 
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {

@@ -24,15 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         
+        // Set list view as a navigation
+        let listViewControllerNavigation = UINavigationController(rootViewController: listViewController)
+        
         // Set delegates
         loginViewController.delegate = self
         loginFallbackViewController.delegate = self
+        listViewController.delegate = self
         onboardingContainerViewController.delegate = self
         
         // Inject LAContext
         loginViewController.localAuthenticationContext = localAuthenticationContext
         
-        window?.rootViewController = listViewController
+        tabBarViewController.listViewControllerNavigation = listViewControllerNavigation
+        
+        window?.rootViewController = tabBarViewController
         
         return true
     }
@@ -63,6 +69,12 @@ extension AppDelegate: LoginFallbackViewControllerDelegate {
         } else {
             setRootViewController(onboardingContainerViewController)
         }
+    }
+}
+
+extension AppDelegate: ListViewControllerDelegate {
+    func ListViewControllerBackButtonDidTapped() {
+        setRootViewController(tabBarViewController)
     }
 }
 

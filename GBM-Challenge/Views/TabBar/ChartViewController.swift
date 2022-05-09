@@ -8,9 +8,16 @@
 import Charts
 import UIKit
 
+protocol ChartViewControllerDelegate: AnyObject {
+    func chartDidLogout()
+    func goToList()
+}
+
 class ChartViewController: UIViewController {
     // Chart data
     var data: [ChartDataEntry]? = nil
+    
+    weak var delegate: ChartViewControllerDelegate?
             
     // Chart view config
     lazy var lineChartView: LineChartView = {
@@ -52,6 +59,9 @@ class ChartViewController: UIViewController {
             view.trailingAnchor.constraint(equalTo: lineChartView.trailingAnchor),
             view.bottomAnchor.constraint(equalTo: lineChartView.bottomAnchor)
         ])
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutButtonDidTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Go to List", style: .plain, target: self, action: #selector(listButtonDidTapped))
     }
     
     // Create data set and data for chart
@@ -68,5 +78,15 @@ class ChartViewController: UIViewController {
         
         let chartData = LineChartData(dataSet: dataSet)
         lineChartView.data = chartData
+    }
+}
+
+extension ChartViewController {
+    @objc func logoutButtonDidTapped() {
+        delegate?.chartDidLogout()
+    }
+
+    @objc func listButtonDidTapped() {
+        delegate?.goToList()
     }
 }
