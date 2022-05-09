@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let loginFallbackViewController = LoginFallbackViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
     let tabBarViewController = TabBarViewController()
+    let listViewController = ListViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -31,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Inject LAContext
         loginViewController.localAuthenticationContext = localAuthenticationContext
         
-        window?.rootViewController = onboardingContainerViewController
+        window?.rootViewController = listViewController
         
         return true
     }
