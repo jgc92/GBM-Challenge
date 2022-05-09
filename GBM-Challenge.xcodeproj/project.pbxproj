@@ -15,6 +15,7 @@
 		0F675C3B2828A354009A0C86 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C3A2828A354009A0C86 /* OnboardingContainerViewController.swift */; };
 		0F675C3D2828A37E009A0C86 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C3C2828A37E009A0C86 /* OnboardingViewController.swift */; };
 		0F675C3F2828A3E1009A0C86 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C3E2828A3E1009A0C86 /* LocalState.swift */; };
+		0F675C412828B155009A0C86 /* ListViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C402828B155009A0C86 /* ListViewControllerViewModel.swift */; };
 		0FC63B062828834800C16BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B052828834800C16BD8 /* AppDelegate.swift */; };
 		0FC63B0A2828834800C16BD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B092828834800C16BD8 /* ViewController.swift */; };
 		0FC63B0F2828834900C16BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FC63B0E2828834900C16BD8 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		0F675C3A2828A354009A0C86 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		0F675C3C2828A37E009A0C86 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		0F675C3E2828A3E1009A0C86 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
+		0F675C402828B155009A0C86 /* ListViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerViewModel.swift; sourceTree = "<group>"; };
 		0FC63B022828834800C16BD8 /* GBM-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GBM-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC63B052828834800C16BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC63B092828834800C16BD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				0FC63B3128288E3600C16BD8 /* TabBarViewControllerViewModel.swift */,
+				0F675C402828B155009A0C86 /* ListViewControllerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				0FC63B3028288D4300C16BD8 /* ViewModelHelper.swift in Sources */,
 				0FC63B2B2828889700C16BD8 /* UIImage+.swift in Sources */,
 				0F675C2E282893DF009A0C86 /* ChartViewController.swift in Sources */,
+				0F675C412828B155009A0C86 /* ListViewControllerViewModel.swift in Sources */,
 				0FC63B2E282888CE00C16BD8 /* TabBarViewController.swift in Sources */,
 				0FC63B062828834800C16BD8 /* AppDelegate.swift in Sources */,
 				0F675C3828289CD9009A0C86 /* LoginFallbackView.swift in Sources */,
