@@ -12,7 +12,7 @@ Hi! I'm Joaquín González and this is my solution to the challenge. Thank you f
 
 ## About the charts
 
-*I'm displaying all values in the IPC JSON i.e. price, percentage change, volume and change. All vs time in four different charts.
+* I'm displaying all values in the IPC JSON i.e. price, percentage change, volume and change. All vs time in four different charts.
 
 * The JSON provided has a lot of unchanged data, especially for price, so the graph is constant for a bit then drops. I little bit ugly but that is the data :)
 
