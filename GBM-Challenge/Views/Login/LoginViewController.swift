@@ -58,6 +58,17 @@ class LoginViewController: UIViewController {
         authButton.setTitle("Face ID", for: [])
         authButton.addTarget(self, action: #selector(authenticationWithLA), for: .primaryActionTriggered)
 
+        switch localAuthenticationContext.biometricType {
+        case .faceID:
+            authButton.setTitle("Face ID", for: [])
+            authButton.setImage(UIImage(systemName: "faceid"), for: [])
+        case .touchID:
+            authButton.setTitle("Touch ID", for: [])
+            authButton.setImage(UIImage(systemName: "touchid"), for: [])
+        default:
+            authButton.setTitle("Login", for: .normal)
+        }
+
         return authButton
     }()
 
