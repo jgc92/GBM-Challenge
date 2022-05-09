@@ -19,7 +19,6 @@
 		0F675C442828B230009A0C86 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C432828B230009A0C86 /* ListViewController.swift */; };
 		0F675C462828B279009A0C86 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F675C452828B279009A0C86 /* CustomTableViewCell.swift */; };
 		0FC63B062828834800C16BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B052828834800C16BD8 /* AppDelegate.swift */; };
-		0FC63B0A2828834800C16BD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B092828834800C16BD8 /* ViewController.swift */; };
 		0FC63B0F2828834900C16BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FC63B0E2828834900C16BD8 /* Assets.xcassets */; };
 		0FC63B122828834900C16BD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC63B102828834900C16BD8 /* LaunchScreen.storyboard */; };
 		0FC63B28282887C400C16BD8 /* IPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC63B27282887C400C16BD8 /* IPC.swift */; };
@@ -56,7 +55,6 @@
 		0F675C452828B279009A0C86 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0FC63B022828834800C16BD8 /* GBM-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GBM-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC63B052828834800C16BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0FC63B092828834800C16BD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0FC63B0E2828834900C16BD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FC63B112828834900C16BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FC63B132828834900C16BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 				0FC63B052828834800C16BD8 /* AppDelegate.swift */,
 				0F675C3E2828A3E1009A0C86 /* LocalState.swift */,
 				0FC63B2F28288D4300C16BD8 /* ViewModelHelper.swift */,
-				0FC63B092828834800C16BD8 /* ViewController.swift */,
 				0FC63B2A2828889700C16BD8 /* UIImage+.swift */,
 				0F675C3328289A88009A0C86 /* LAContext+.swift */,
 				0FC63B0E2828834900C16BD8 /* Assets.xcassets */,
@@ -417,7 +414,6 @@
 				0F675C3428289A88009A0C86 /* LAContext+.swift in Sources */,
 				0F675C3F2828A3E1009A0C86 /* LocalState.swift in Sources */,
 				0F675C3228289640009A0C86 /* LoginViewController.swift in Sources */,
-				0FC63B0A2828834800C16BD8 /* ViewController.swift in Sources */,
 				0FC63B3228288E3600C16BD8 /* TabBarViewControllerViewModel.swift in Sources */,
 				0FC63B28282887C400C16BD8 /* IPC.swift in Sources */,
 				0FC63B3028288D4300C16BD8 /* ViewModelHelper.swift in Sources */,
