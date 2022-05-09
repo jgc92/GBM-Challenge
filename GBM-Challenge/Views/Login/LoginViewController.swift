@@ -10,9 +10,15 @@ import Foundation
 import UIKit
 import LocalAuthentication
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLoginWithLA()
+    func didFallback()
+}
+
 class LoginViewController: UIViewController {
     
-    let localAuthenticationContext = LAContext()
+    weak var delegate: LoginViewControllerDelegate?
+    weak var localAuthenticationContext: LAContext?
     
     lazy var logoImageView: UIImageView = {
         let logoImageView = UIImageView()
@@ -57,6 +63,10 @@ class LoginViewController: UIViewController {
         authButton.configuration?.imagePadding = 8
         authButton.setTitle("Face ID", for: [])
         authButton.addTarget(self, action: #selector(authenticationWithLA), for: .primaryActionTriggered)
+        
+        guard let localAuthenticationContext = localAuthenticationContext else {
+            return UIButton()
+        }
 
         switch localAuthenticationContext.biometricType {
         case .faceID:
@@ -74,6 +84,11 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setup()
+    }
+    
+    private func setup() {
         view.backgroundColor = .systemGray
         
         stackView.addArrangedSubview(signInLabel)
@@ -98,6 +113,7 @@ class LoginViewController: UIViewController {
 // Local Authentication helpers
 extension LoginViewController {
     @objc func authenticationWithLA() {
+        guard let localAuthenticationContext = localAuthenticationContext else { return }
         localAuthenticationContext.localizedFallbackTitle = "Use Passcode"
 
         var authError: NSError?
@@ -109,7 +125,9 @@ extension LoginViewController {
 
                 if success {
                     // LA success
-                    print("success")
+                    DispatchQueue.main.async {
+                        self?.delegate?.didLoginWithLA()
+                    }
                 } else {
                     guard let error = evaluateError else {
                         return
@@ -117,7 +135,9 @@ extension LoginViewController {
                     print(self?.evaluateAuthenticationPolicyMessageForLA(errorCode: error._code) ?? "")
 
                     // Fallback with password.
-                    print("fallback")
+                    DispatchQueue.main.async {
+                        self?.delegate?.didFallback()
+                    }
                 }
             }
         } else {

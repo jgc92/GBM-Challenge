@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol LoginFallbackViewControllerDelegate: AnyObject {
+    func backButton()
+    func didLogin()
+}
+
 class LoginFallbackViewController: UIViewController {
+    weak var delegate: LoginFallbackViewControllerDelegate?
+
     var isBackButtonVisible = false
     
     let backButton: UIButton = {
@@ -16,7 +23,7 @@ class LoginFallbackViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Go back", for: [])
         button.setTitleColor(UIColor.systemBlue, for: [])
-//        button.addTarget(self, action: #selector(backButtonDidTapped), for: .primaryActionTriggered)
+        button.addTarget(self, action: #selector(backButtonDidTapped), for: .primaryActionTriggered)
         
         return button
     }()
@@ -29,6 +36,7 @@ class LoginFallbackViewController: UIViewController {
         signInButton.configuration = .filled()
         signInButton.configuration?.imagePadding = 8
         signInButton.setTitle("Sign In", for: [])
+        signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
         
         return signInButton
     }()
@@ -57,7 +65,6 @@ class LoginFallbackViewController: UIViewController {
         super.viewDidLoad()
         
         loginFallbackView.translatesAutoresizingMaskIntoConstraints = false
-        
         view.backgroundColor = .systemGray
         
         if !isBackButtonVisible {
@@ -104,5 +111,35 @@ class LoginFallbackViewController: UIViewController {
             errorMessageLabel.leadingAnchor.constraint(equalTo: loginFallbackView.leadingAnchor),
             errorMessageLabel.trailingAnchor.constraint(equalTo: loginFallbackView.trailingAnchor)
         ])
+    }
+}
+
+extension LoginFallbackViewController {
+    @objc func backButtonDidTapped(sender: UIButton) {
+        delegate?.backButton()
+    }
+    
+    @objc func signInTapped(sender: UIButton) {
+        errorMessageLabel.isHidden = true
+        login()
+    }
+    
+    private func login() {
+        guard let username = username, let password = password else {
+            assertionFailure("Username / password should never be nil")
+            return
+        }
+        
+        if username == "" && password == "" {
+            signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogin()
+        } else {
+            configureView(withMessage: "Incorrect username / password")
+        }
+    }
+    
+    private func configureView(withMessage message: String) {
+        errorMessageLabel.isHidden = false
+        errorMessageLabel.text = message
     }
 }
